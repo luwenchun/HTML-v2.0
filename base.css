@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*以下是Tab标签1部分*/
+.tab1{overflow:auto ;}
+.tab1_side{width:10px;float: left;background:url(images/A-images/img_tab1.png);height:27px;}
+.tab1_beforeclick{float:left;width:97px;height:27px;line-height:27px;cursor:pointer;   text-align:center;font-size:12px; color:#434343;background: url(images/A-images/img_tab1.png); }
+.tab1_afterclick{float:left;background:url(images/A-images/img_tab1_hover.png);width:97px;height:27px;line-height:27px; text-align:center;font-size:12px; color:#00a0b0; }
+.tab1_unclick{float:left;width:97px;height:27px;line-height:27px;cursor:pointer;   text-align:center;font-size:12px; color:#cbcbcb;background: url(images/A-images/img_tab1.png); }
+
+/*以下是Tab标签2部分*/
+.tab2{overflow:auto ;background-color: #00a0b0;height: 34px;width: 321px;}
+.tab2_beforeclick{float:left;width:107px;height:34px;line-height:34px;cursor:pointer;   text-align:center;font-size:14px; color:#fff;}
+.tab2_afterclick{float:left;background:url(images/A-images/img_tab2_hover.png);width:107px;height:34px;line-height:34px; text-align:center;font-size:14px; color:#baf9ff; }
+.tab2_unclick{color:#d1ecef;line-height:34px;width:107px;height:34px;text-align:center;font-size:14px;float:left;}
+
+/*以下是面包屑部分*/
+.div_breadcrumb ul{list-style: none;margin-left: -40px;}
+.div_breadcrumb ul span{float: left;}
+.div_breadcrumb ul li{float: left;}
+.div_breadcrumb ul li a{text-decoration: none;color: #434343;}
+.div_breadcrumb ul li a:hover{color: #00a0b0;}
+
+/*以下是按钮部分*/
+.btn1{height: 26px;width: 68px;text-align: middle;background-color: #eb6841;border: none;color: #fff;font-family: '微软雅黑';font-size: 12px;border-radius: 3px;outline:none;cursor:pointer;}
+.btn1:hover{height: 26px;width: 68px;text-align: middle;background-color: #fff;border:1px solid #eb6841;color: #eb6841;font-family: '微软雅黑';font-size: 12px;border-radius: 3px;}
+
+.btn2{height: 26px;width: 68px;text-align: middle;background-color: #21b7c6;border: none;color: #fff;font-family: '微软雅黑';font-size: 12px;border-radius: 3px;outline:none;cursor:pointer;}
+.btn2:hover{height: 26px;width: 68px;text-align: middle;background-color: #fff;border:1px solid #21b7c6;color: #21b7c6;font-family: '微软雅黑';font-size: 12px;border-radius: 3px;}
+
+.btn3{height: 26px;width: 68px;text-align: middle;background-color: #c2c2c2;border: none;color: #fff;font-family: '微软雅黑';font-size: 12px;border-radius: 3px;outline:none;cursor:pointer;}
+.btn3:hover{height: 26px;width: 68px;text-align: middle;background-color: #c2c2c2;border: none;color: #fff;font-family: '微软雅黑';font-size: 12px;border-radius: 3px;outline:none;cursor:pointer;}
+
+.btn4{height: 26px;width: 68px;text-align: middle;background-color: #fff;border:1px solid #e1e1e1;color: #898989;font-family: '微软雅黑';font-size: 12px;border-radius: 3px;outline:none;cursor:pointer;}
+.btn4:hover{height: 26px;width: 68px;text-align: middle;background-color: #fff;border:1px solid #e1e1e1;color: #898989;font-family: '微软雅黑';font-size: 12px;border-radius: 3px;outline:none;cursor:pointer;}

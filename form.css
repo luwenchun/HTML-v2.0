@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*以下是普通输入框默认状态、录入状态以及其他状态部分*/
+.text-input{width: 194px;height: 24px;line-height: 24px;font-family: '微软雅黑';font-size: 12px;padding-left:5px;padding-top: 0px;padding-bottom: 0px;color: #bab8b8;border:1px #d2d3d5 solid;outline:none;}
+.input1clear { display: none; position: absolute; width: 19px; height: 18px; margin: 4px 0 0 -24px; background: url(images/img_clear.png) 0 0 no-repeat;}
+.text-input::-ms-clear { display: none; }
+.text-input:valid + .input1clear { display: inline; }
+
+/*以下是选择输入框默认状态及录入状态部分*/
+.text-input2{width: 82px;height: 24px;line-height: 24px;font-family: '微软雅黑';font-size: 12px;padding-left:5px;padding-top: 0px;padding-bottom: 0px;color: #bab8b8;border:1px #d2d3d5 solid;outline:none;}
+.input2clear { position: absolute; width: 27px; height: 13px; margin: 1px 0 0 -28px; background: url(images/img_button2_up_un.png) 0 0 no-repeat;}
+.input2clear2 { position: absolute; width: 27px; height: 12px; margin: 13px 0 0 -28px; background: url(images/img_button2_down_un.png) 0 0 no-repeat;}
+
+/*以下是普通输入框禁用状态部分*/
+.text-input3{width: 194px;height: 24px;line-height: 24px;font-family: '微软雅黑';background-color:#f4f6f9;font-size: 12px;padding-left:5px;padding-top: 0px;padding-bottom: 0px;color: #bab8b8;border:1px #d2d3d5 solid;outline:none;}
+.input3clear { position: absolute; width: 19px; height: 18px; margin: 4px 0 0 -24px; background: url(images/img_clear.png) 0 0 no-repeat;}
+
+/*以下是选择输入框禁用状态部分*/
+.text-input4{width: 82px;height: 24px;line-height: 24px;font-family: '微软雅黑';background-color:#f4f6f9;font-size: 12px;padding-left:5px;padding-top: 0px;padding-bottom: 0px;color: #bab8b8;border:1px #d2d3d5 solid;outline:none;}
+.input4clear { position: absolute; width: 27px; height: 13px; margin: 1px 0 0 -28px; background: url(images/img_button2_up_none.png) 0 0 no-repeat;}
+.input4clear2 { position: absolute; width: 27px; height: 12px; margin: 13px 0 0 -28px; background: url(images/img_button2_down_none.png) 0 0 no-repeat;}
+
+/*以下是下拉菜单默认及展开状态部分*/
+.divselect {  width: 201px;  height: 24px; line-height: 24px; border: 1px solid #d2d3d5;  position: relative;color: #bab8b8;background: url(images/img_select.png) 0 -2px no-repeat;}
+.divselect cite{font-size: 12px;font-family: '微软雅黑';font-style:normal;padding-left: 6px;}
+.divselect ul{list-style:none;display: none;padding-left:-40px;margin-right:-1px;margin-left: -1px;border-right:1px solid #a3a3a3;border-left:1px solid #a3a3a3;border-bottom:1px solid #a3a3a3;line-height:26px;background-color: #fff;}
+.divselect ul li{color: #434343;margin-left: -20px;}
+.divselect ul li a{ text-decoration: none;font-size: 12px;}
+
+/*以下是单选框可选择状态部分*/
+input[type='radio'].radio {opacity:0; display:inline-block;}
+label.radio {background:url(images/A-images/input_02.png) no-repeat 0 2px; padding-left:18px;}
+input[type='radio'].radio:checked + .radio {background:url(images/A-images/input_01.png) no-repeat 0 2px;}
+
+/*以下是单选框不可选择状态部分*/
+input[type='radio'].radio2 {opacity:0; display:inline-block;}
+label.radio2 {background:url(images/A-images/input_02_1.png) no-repeat 0 2px; padding-left:18px;}
+input[type='radio'].radio2:checked + .radio2 {background:url(images/A-images/input_01_1.png) no-repeat 0 2px;}
+
+/*以下是复选框可选择状态部分*/
+input[type='checkbox'].checkbox {opacity:0; display:inline-block;}
+label.checkbox {background:url(images/A-images/input_03.png) no-repeat 0 3px; padding-left:18px;}
+input[type='checkbox'].checkbox:checked + .checkbox {background:url(images/A-images/input_04.png) no-repeat 0 2px;}
+
+/*以下是单选框不可选择状态部分*/
+input[type='checkbox'].checkbox2 {opacity:0; display:inline-block;}
+label.checkbox2 {background:url(images/A-images/input_03_1.png) no-repeat 0 3px; padding-left:18px;}
+input[type='checkbox'].checkbox2:checked + .checkbox2 {background:url(images/A-images/input_04_1.png) no-repeat 0 2px;}

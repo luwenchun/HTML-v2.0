@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    
+    <title>Title</title>
+	<link href="css.css" rel="stylesheet" type="text/css">
+    <link href="controls.css" rel="stylesheet" type="text/css">
+    <link href="form.css" rel="stylesheet" type="text/css">
+    <link href="base.css" rel="stylesheet" type="text/css">
+
+    <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/prettify/r224/prettify.css" rel="stylesheet">
+    <link href="bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/css/layui.css"  media="all">
+    <style>
+        .show{
+            display: block;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<script>
+	var itotalmenu=3;
+	var icurrentmenu=1;
+	function clickMenu(imenu){
+		for(i=1;i<=itotalmenu;i++) {
+            if (i == imenu) {
+                icurrentmenu = imenu;
+                document.getElementById("menu" + i).className = "currentmenu";
+            } else {
+                document.getElementById("menu" + i).className = "leftmenu";
+            }
+            $('#controls'+imenu).show();
+            $('#controls'+imenu).siblings().hide();
+		}
+	}
+	function onMouseOverMenu(imenu){
+		
+		document.getElementById("menu"+imenu).className="currentmenu";
+			
+		
+	}
+	function onMouseOutMenu(imenu){
+		if(imenu!=icurrentmenu)
+		document.getElementById("menu"+imenu).className="leftmenu";
+			
+		
+	}
+</script>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/common.js"></script>
+
+<body style="min-width: 1200px;margin:0 auto; overflow:hidden; " >
+    <div id="bg" class="div_showd"></div>
+
+<!--导航栏部分-->
+    <div style="position: absolute;margin:0 auto;width: 100%; height:100px;background-image:url(images/bg_top.png)">
+        <div style="width:1200px;height:100px;margin:0 auto; ">
+        	<div style="width:155px; height:100px; float:left"><img src="images/logo_A_grey.png"></div>
+            <div style="width:1000px; height:80px;float:left;">
+            	<a href="A-PC-1-layout.html" class="nav" style="margin-left:25px;"><img src="images/nav_1.png" onMouseOver="this.src='images/nav_1_hover.png'" onMouseOut="this.src='images/nav_1.png'"></a>
+            	<a href="A-PC-2-Color.html" class="nav"><img src="images/nav_2.png" onMouseOver="this.src='images/nav_2_hover.png'" onMouseOut="this.src='images/nav_2.png'"></a>
+            	<a href="A-PC-3-Text.html" class="nav"><img src="images/nav_3.png" onMouseOver="this.src='images/nav_3_hover.png'" onMouseOut="this.src='images/nav_3.png'"></a>
+            	<a href="A-PC-4-Icons.html" class="nav"><img src="images/nav_4.png" onMouseOver="this.src='images/nav_4_hover.png'" onMouseOut="this.src='images/nav_4.png'"></a>
+            	<a href="A-PC-5-Controls.html" class="nav"><img src="images/nav_5_hover.png"></a>
+            	<a href="A-PC-6-Design.html" class="nav"><img src="images/nav_6.png" onMouseOver="this.src='images/nav_6_hover.png'" onMouseOut="this.src='images/nav_6.png'"></a>
+            </div>
+            <div style="width:45px; height:80px;float:left;">
+            	<a href="index.html" class="icon_back"><img src="images/icon_back.png" onMouseOver="this.src='images/icon_back_hover.png'" onMouseOut="this.src='images/icon_back.png'"></a>
+            </div>
+        </div>
+    </div>
+<!--导航栏部分结束-->
+
+    <div style="position: absolute;margin:0 auto;width: 100%; height: 100%; top:100px; overflow:scroll; min-width:1200px">
+        <div style="width:1200px;height:100%;margin:0 auto;left:50%; margin-left:-592px;position:relative">
+
+<!--左边菜单部分-->
+        	<div style="width:155px; height:2300px; background-color:#f6f6f6; float:left;">
+                <a class="currentmenu" href="javascript:void(0);" id="menu1" onclick="clickMenu(1);" onMouseOver="onMouseOverMenu(1);" onMouseOut="onMouseOutMenu(1);" style="margin-top:20px">基本控件</a>
+                <a class="leftmenu" href="javascript:void(0);" id="menu2" onclick="clickMenu(2);" onMouseOver="onMouseOverMenu(2);" onMouseOut="onMouseOutMenu(2);">表单控件</a>
+                <a class="leftmenu" href="javascript:void(0);" id="menu3" onclick="clickMenu(3);" onMouseOver="onMouseOverMenu(3);" onMouseOut="onMouseOutMenu(3);">表格控件</a>
+            </div>
+<!--左边菜单部分结束-->
+
+<!--右边内容部分-->
+            <div style="width:900px;margin-left:45px; height:3000px; float:left;margin-top:30px" >
+
+                <!--基本控件部分开始-->
+                <div id="controls1" style="height:100%;margin:0 auto;width:100%;" scroll="auto">
+                    <div id="base_contentdiv"  style="width:900px; height:2100px; float:left " >
+                        <!--以下是Tab标签部分-->
+                        <div style="width:900px;height:32px;">
+                            <span class="num_img"><img src="images/num_01.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">Tab标签</span>
+                                <span class="num_content">选项卡切换组件</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:15px"><img src="images/A-images/img_A_tab.png"></div>
+
+                        <div class="HTML_title">Tab标签1实例动态效果 &nbsp;&nbsp;<a href="base.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox15" onClick="showBg();ShowCodeDiv('a_inputbox15',$('#div_inputbox15').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox15">
+                            <script>
+
+                                $(function () {
+                                    $('.tab1>div').each(function(index){
+                                        $(this).on('click',function(){
+                                            if(index == ($('.tab1>div').length -1)){
+                                                return ;
+                                            }
+                                            $('#contentdiv'+(index+1)).show().siblings().hide();
+                                            $('#btn'+(index+1)).attr('class','tab1_afterclick').siblings('[class!="tab1_unclick"]').attr('class','tab1_beforeclick');
+                                        })
+                                    });
+                                });
+                            </script>
+
+                            <div class="tab1_side"></div>
+                            <div class="tab1">
+                                <div class=tab1_afterclick  id=btn1>机构信息</div>
+                                <div class=tab1_beforeclick  id=btn2>区划信息</div>
+                                <div class=tab1_unclick  id=btn3>内部信息</div>
+                            </div>
+
+                            <div style="margin-top:10px;overflow:auto ;">
+                                <div id="contentdiv1">这是机构信息内容</div>
+                                <div id="contentdiv2" style="display: none">这是区划信息内容</div>
+                                <div id="contentdiv3" style="display: none">这是内部信息内容</div>
+                            </div>
+                        </div>
+
+                        <div class="HTML_title">Tab标签1实例动态效果 &nbsp;&nbsp;<a href="base.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox16" onClick="showBg();ShowCodeDiv('a_inputbox16',$('#div_inputbox16').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox16">
+                            <script>
+
+                                $(function () {
+                                    $('.tab2>div').each(function(index){
+                                        $(this).on('click',function(){
+                                            if(index == ($('.tab2>div').length -1)){
+                                                return ;
+                                            }
+                                            $('#contentdiv2_'+(index+1)).show().siblings().hide();
+                                            $('#btn2_'+(index+1)).attr('class','tab2_afterclick').siblings('[class!="tab2_unclick"]').attr('class','tab2_beforeclick');
+                                        })
+                                    });
+                                });
+                            </script>
+
+                            <div class="tab2">
+                                <div class=tab2_afterclick  id=btn2_1>机构信息</div>
+                                <div class=tab2_beforeclick  id=btn2_2>区划信息</div>
+                                <div class=tab2_unclick  id=btn2_3>内部信息</div>
+                            </div>
+
+                            <div style="margin-top:10px;overflow:auto ;">
+                                <div id="contentdiv2_1">这是机构信息内容</div>
+                                <div id="contentdiv2_2" style="display: none">这是区划信息内容</div>
+                                <div id="contentdiv2_3" style="display: none">这是内部信息内容</div>
+                            </div>
+                        </div>
+                        <!--Tab标签部分结束-->
+
+                        <!--以下是面包屑部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_02.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">面包屑</span>
+                                <span class="num_content">文字菜单导航</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:15px"><img src="images/A-images/img_A_mianbaoxie.png"></div>
+
+                        <div class="HTML_title">面包屑实例动态效果 &nbsp;&nbsp;<a href="base.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox17" onClick="showBg();ShowCodeDiv('a_inputbox17',$('#div_inputbox17').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox17">
+                            <div class="div_breadcrumb">
+                                <ul>
+                                    <li><a href="#">一级菜单</a></li>
+                                    <span>&nbsp;>&nbsp;</span>
+                                    <li><a href="#">二级菜单</a></li>
+                                    <span>&nbsp;>&nbsp;</span>
+                                    <li><a href="#">三级菜单</a></li>
+                                    <span>&nbsp;>&nbsp;</span>
+                                    <li><a href="#">四级菜单</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br/>
+                        <!--面包屑部分结束-->
+
+                        <!--以下是按钮部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_03.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">按钮</span>
+                                <span class="num_content">用于开始一个即时操作</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:15px"><img src="images/A-images/img_A_button.png"></div>
+
+                        <div class="HTML_title">面包屑实例动态效果 &nbsp;&nbsp;<a href="base.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox18" onClick="showBg();ShowCodeDiv('a_inputbox18',$('#div_inputbox18').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox18">
+                            <button class="btn1" onclick="btn1Click()">主按钮</button>
+                            <button class="btn2" style="margin-left: 5px">次按钮</button>
+                            <button class="btn3" style="margin-left: 5px">幽灵按钮</button>
+                            <button class="btn4" style="margin-left: 5px">辅助按钮</button>
+                        </div>
+
+                        <!--按钮部分结束-->
+
+                        <!--以下是分页部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_04.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">分页</span>
+                                <span class="num_content">用于长列表分页，一次加载一个页面</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:15px"><img src="images/A-images/img_A_fenye.png"></div>
+                        <!--分页部分结束-->
+
+                        <!--以下是穿梭框部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_05.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">穿梭框</span>
+                                <span class="num_content">双栏或多栏穿梭选择框</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:15px"><img src="images/A-images/img_A_chuansuokuang.png"></div>
+                        <!--穿梭框部分结束-->
+                        <div>
+                            <header>代码部分</header>
+                            <table style="width: 300px;float: left;text-align:center;">
+                                <thead>
+                                <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>居委代码</td>
+                                    <td>居委名称</td>
+                                </tr>
+                                </thead>
+                                <tbody id="left-td">
+                                <tr>
+                                    <td><input type="checkbox" value="1"/></td>
+                                    <td>31024001</td>
+                                    <td>安亭第一居委</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" value="2"/></td>
+                                    <td>31024002</td>
+                                    <td>安亭第一居委</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" value="3"/></td>
+                                    <td>31024003</td>
+                                    <td>安亭第一居委</td>
+                                </tr><tr>
+                                    <td><input type="checkbox" value="4"/></td>
+                                    <td>31024004</td>
+                                    <td>安亭第一居委</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" value="5"/></td>
+                                    <td>31024005</td>
+                                    <td>安亭第一居委</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+
+                            <div style="width: 180px;float: left;text-align: center">
+                            <button onclick="move(this)">&gt;&gt;&gt;</button>
+                                <br/>
+                            <button onclick="move(this)">&lt;&lt;&lt;</button>
+                            </div>
+                            <table style="width: 300px;float: left;text-align: center">
+                                <thead>
+                                <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>居委代码</td>
+                                    <td>居委名称</td>
+                                </tr>
+                                </thead>
+                                <tbody id="right-td">
+
+                                <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>31024000</td>
+                                    <td>安亭第一居委</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                            <div style="clear:both"></div>
+                        </div>
+                        <script type="text/javascript">
+                            var unselCts=[],
+                                    selCts=[];
+                            var unselCts=document.getElementById("left-td").innerHTML.trim().slice(4,-5).split(/<\/tr>\s*<tr>/);
+                           console.log(unselCts.length);
+
+                            function move(btn){
+                                switch(btn.innerHTML){
+                                    case "&gt;&gt;&gt;":
+
+                                        var tds=document.querySelectorAll("#left-td>tr");
+                                         //console.log(tds);
+
+                                            for(var i=tds.length-1;i>=0;i--){
+//                                                var a=tds[1].firstElementChild;
+//                                                console.log(a);
+                                                //debugger;
+                                                if(tds[i].firstElementChild.firstElementChild.checked){
+
+                                                  selCts.push(unselCts.splice(i,1));
+
+                                                }
+                                            }
+                                            selCts.sort();
+                                        console.log(selCts);
+                                        break;
+                                    case "&lt;&lt;&lt;":
+                                        var tds=document.querySelectorAll("#right-td>tr");
+
+                                        for(var i=tds.length-1;i>=0;i--){
+                                            if(tds[i].firstElementChild.firstElementChild.checked){
+                                              unselCts.push(selCts.splice(i,1));
+
+                                         }
+                                        }
+                                        unselCts.sort();
+                                }
+                                show();
+                            }
+
+//                            appendchilid()
+                        function show(){
+                            document.getElementById("right-td").innerHTML=unselCts.length>=0?
+                            "<tr>"+selCts.join("</tr><tr>")+"</tr >":"";
+
+                            document.getElementById("left-td").innerHTML=selCts.length>=0?
+                            "<tr>"+unselCts.join("</tr><tr>")+"</tr >":"";
+                        }
+                            
+
+                        </script>
+                        <!--以下是弹出对话框部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_06.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">弹出对话框</span>
+                                <span class="num_content">通知提醒信息</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:15px"><img src="images/A-images/img_A_dialogbox.png"></div>
+                        <!--弹出对话框部分结束-->
+
+                        <!--以下是Tag标签部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_07.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">Tag标签</span>
+                                <span class="num_content">用于标记和分类</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:20px"><img src="images/A-images/img_A_tag.png"></div>
+                        <!--Tag标签部分结束-->
+                    </div>
+
+                </div>
+                <!--基本控件部分结束-->
+
+                <!--表单控件部分开始-->
+                <div id="controls2" style="display:none;height:100%;margin:0 auto;width:100%;" scroll="auto">
+                    <div id="form_contentdiv"  style="width:900px; height:2300px; float:left " >
+                        <!--以下是输入框部分-->
+                        <div style="width:900px;height:32px;">
+                            <span class="num_img"><img src="images/num_01.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">输入框</span>
+                                <span class="num_content">通过鼠标或者键盘输入内容、表单录入</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:20px"><img src="images/A-images/img_A_inputbox_1.png"></div>
+                        <div class="HTML_title">普通输入框默认状态、录入状态以及其他状态实例动态效果 &nbsp;&nbsp;<a href="form.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox5" onClick="showBg();ShowCodeDiv('a_inputbox5',$('#div_inputbox5').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox5">
+                            <script>
+                                $(function(){
+                                    $('#input1').on('input propertychange',function (event) {
+                                        if($(this).val() == '输入正确'){
+                                            $(this).next('a').css('background-image','url(images/img_button5_true.png)');
+                                        }else if($(this).val() == '警示状态'){
+                                            $(this).next('a').css('background-image','url(images/img_button5_warnning.png)');
+                                            $('#input1').css('border','1px #eb6841 solid');
+                                        }else if($(this).val() == '错误提示'){
+                                            $(this).next('a').css('background-image','url(images/img_button5_false.png)');
+                                            $('#input1').css('border','1px #eb6841 solid');
+                                        }else{
+                                        }
+                                        return false;
+                                    }).on('click',function(){
+                                        $('#input1').css({'color':'#434343','border':'1px #a3a3a3 solid'});
+                                        $('#input1').next('a').css("background-image","url(images/img_clear_click.png)");
+                                    });
+                                });
+                                function clear1Click() {
+                                    $('#input1').val("").css('border','1px #d2d3d5 solid');
+                                    $('#input1').next('a').css("background-image","url(images/img_clear.png)");
+                                }
+                            </script>
+                            <input id= "input1" type="text" class="text-input" placeholder="输入内容"  ><a href="javascript:void(0)" class="input1clear" onclick="clear1Click();"></a>
+                        </div>
+
+                        <div class="HTML_title">选择输入框默认及录入状态实例动态效果 &nbsp;&nbsp;<a href="form.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox6" onClick="showBg();ShowCodeDiv('a_inputbox6',$('#div_inputbox6').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox6">
+                            <script>
+                                function input2Click() {
+                                    $('#input2').css({'color':'#434343','border':'1px #a3a3a3 solid'});
+                                    $('.input2clear').css("background-image","url(images/img_button2_up.png)");
+                                    $('.input2clear2').css("background-image","url(images/img_button2_down.png)");
+                                }
+                            </script>
+                            <input id= "input2" type="text" class="text-input2" placeholder="选择状态" onclick="input2Click();"><a href="javascript:void(0)" class="input2clear"></a><a href="javascript:void(0)" class="input2clear2";"></a>
+                        </div>
+
+                        <div class="HTML_title">普通输入框禁用状态实例动态效果 &nbsp;&nbsp;<a href="form.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox7" onClick="showBg();ShowCodeDiv('a_inputbox7',$('#div_inputbox7').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox7">
+                            <input id= "input3" type="text" class="text-input3" placeholder="禁止编辑" readonly><a href="javascript:void(0)" class="input3clear"></a>
+                        </div>
+
+                        <div class="HTML_title">选择输入框禁用状态实例动态效果 &nbsp;&nbsp;<a href="form.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox8" onClick="showBg();ShowCodeDiv('a_inputbox8',$('#div_inputbox8').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox8">
+                            <input id= "input4" type="text" class="text-input4" placeholder="禁止编辑" readonly><a href="javascript:void(0)" class="input4clear"></a><a href="javascript:void(0)" class="input4clear2"></a>
+                        </div>
+
+                        <!--输入框部分结束-->
+
+                        <!--以下是下拉菜单部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_02.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">下拉菜单</span>
+                                <span class="num_content">向下弹出的列表选项</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:20px"><img src="images/A-images/img_A_dropdownbox_1.png"></div>
+
+                        <div class="HTML_title">下拉菜单默认及展开状态实例动态效果 &nbsp;&nbsp;<a href="form.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox9" onClick="showBg();ShowCodeDiv('a_inputbox9',$('#div_inputbox9').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox9">
+                            <script>
+                                $(function(){
+                                    $.divselect("#divselect","#inputselect");
+                                });
+                                function selectClick() {
+                                    $('#divselect').css({'color':'#434343','border':'1px #a3a3a3 solid','background-image':'url(images/img_select_down.png)'});
+                                }
+                            </script>
+
+                            <form action="" method="post">
+                                <div id="divselect" class="divselect" onclick="selectClick">
+                                    <cite>第一人民医院</cite>
+                                    <ul>
+                                        <li><a href="javascript:;" selectid="1">第一人民医院</a></li>
+                                        <li><a href="javascript:;" selectid="2">第二人民医院</a></li>
+                                        <li><a href="javascript:;" selectid="3">第三人民医院</a></li>
+                                        <li><a href="javascript:;" selectid="4">第四人民医院</a></li>
+                                        <li><a href="javascript:;" selectid="5">第五人民医院</a></li>
+                                    </ul>
+                                </div>
+                                <input name="" type="hidden" value="" id="inputselect"/>
+                            </form>
+                        </div>
+                        <!--下拉菜单部分结束-->
+
+                        <!--以下是单选框部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_03.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">单选框</span>
+                                <span class="num_content">选择单项类别或内容</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:20px"><img src="images/A-images/img_A_danxuankuang.png"></div>
+
+                        <div class="HTML_title">单选按钮可选择状态实例动态效果 &nbsp;&nbsp;<a href="form.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox11" onClick="showBg();ShowCodeDiv('a_inputbox11',$('#div_inputbox11').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox11">
+                            <input type="radio" name="radio" class="radio" id="a" checked /><label for="a" class="radio">是</label>
+                            <input type="radio" name="radio" class="radio" id="b" /><label for="b" class="radio">否</label>
+                        </div>
+
+                        <div class="HTML_title">单选按钮不可选择状态实例动态效果 &nbsp;&nbsp;<a href="form.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox12" onClick="showBg();ShowCodeDiv('a_inputbox12',$('#div_inputbox12').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox12">
+                            <input type="radio" name="radio2" class="radio2" id="a2" disabled="disabled" checked /><label for="a2" class="radio2">是</label>
+                            <input type="radio" name="radio2" class="radio2" id="b2" disabled="disabled" /><label for="b2" class="radio2">否</label>
+                        </div>
+                        <!--单选框部分结束-->
+
+                        <!--以下是复选框部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_04.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">多选框</span>
+                                <span class="num_content">选择多项类别或内容</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:20px"><img src="images/A-images/img_A_fuxuankuang.png"></div>
+
+                        <div class="HTML_title">复选框可选择状态实例动态效果 &nbsp;&nbsp;<a href="form.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox13" onClick="showBg();ShowCodeDiv('a_inputbox13',$('#div_inputbox13').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox13">
+                            <input type="checkbox" name="health" class="checkbox" id="c" checked="checked"/><label for="c" class="checkbox">高血压</label>
+                            <input type="checkbox" name="health" class="checkbox" id="d"/><label for="d" class="checkbox">糖尿病</label>
+                        </div>
+
+                        <div class="HTML_title">复选框不可选择状态实例动态效果 &nbsp;&nbsp;<a href="form.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox14" onClick="showBg();ShowCodeDiv('a_inputbox14',$('#div_inputbox14').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox14">
+                            <input type="checkbox" name="health" class="checkbox2" id="c2" disabled="disabled" checked="checked"/><label for="c2" class="checkbox2">高血压</label>
+                            <input type="checkbox" name="health" class="checkbox2" id="d2" disabled="disabled"/><label for="d2" class="checkbox2">糖尿病</label>
+                        </div>
+                        <!--复选框部分结束-->
+
+                        <!--以下是树形控件部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_05.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">树形控件</span>
+                                <span class="num_content">展现层级关系，可展开和收起</span>
+                            </div>
+                        </div>
+                        <div style="padding-left:60px;margin-top:20px"><img src="images/A-images/img_A_shuxingkongjian.png"></div>
+
+                        <!--<div id="tree">-->
+                            <!--<h4>以下是代码部分</h4>-->
+
+                            <!--<div id="first-hospital" style="border: 1px solid black;width: 220px;height: 200px;">-->
+                                <!--<ul
+
+                                    <!--<li><a href="#" >住院部</a></li>-->
+                                        <!--<ul show="true" class="second hide">-->
+                                            <!--<li><a href="#" >内科</a></li>-->
+                                                <!--<ul class="third hide">-->
+                          <!--<li><a href="#" >神经内科</a></li>-->
+                                                    <!--<li><a href="#" >肝脏内科</a></li>-->
+                                                <!--</ul>-->
+                                            <!--<li><a href="#" >外科</a></li>-->
+                                                <!--<ul class="third hide">-->
+                                                    <!--<li><a href="#" >皮肤外科</a></li>-->
+                                                    <!--<li><a href="#" >口腔外科</a></li>-->
+                                                <!--</ul>-->
+                                        <!--</ul>-->
+                                    <!--<li><a href="#" >内科</a></li>-->
+                                    <!--<li><a href="#" >五官科</a></li>-->
+                                    <!--<li><a href="#" >神经内科</a></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                            <legend>树形控件</legend>
+                        </fieldset>
+                        <select id="selected">
+                            <option >第一人民医院</option>
+                            <option >第二人民医院</option>
+                        </select>
+                        <div id="box" style=" width: 200px; display: none; height: 210px; padding: 10px; border: 1px solid #ddd; overflow: auto;">
+                            <ul id="demo1" ></ul>
+                        </div>
+
+                        <!--树形控件部分结束-->
+
+                        <!--以下是日期选择框件部分-->
+                        <div style="width:900px;height:32px;margin-top:40px">
+                            <span class="num_img"><img src="images/num_06.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">日期选择框</span>
+                                <span class="num_content">输入或选择日期控件</span>
+                            </div>
+                            <div style="float: left;">
+                                <h4>laydate日期选择插件</h4>
+
+
+                                <!--<link href="bootstrap-datepicker/datepicker.css" rel="stylesheet"/>-->
+                                <!--<link href="bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet"/>-->
+                                <!--<script src="bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>-->
+                                <!--<script src="bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" type="text/javascript" charset="utf-8"></script>-->
+                                <!--<script src="bootstrap-datepicker/bootstrap-datepicker.js"></script>-->
+
+
+
+
+                                <div class="input-append date form_datetime">
+                                    <input size="16" type="text" value="" readonly>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div style="padding-left:60px;margin-top:20px"><img src="images/A-images/img_A_riqi.png"></div>
+
+
+                        <!--日期选择框部分结束-->
+                    </div>
+                </div>
+                <!--表单控件部分结束-->
+
+                <!--表格控件部分开始-->
+                <div id="controls3" style="display:none;height:100%;margin:0 auto;width:100%;" scroll="auto">
+                    <div id="table_contentdiv"  style="width:900px; height:1200px; float:left " >
+                        <div style="width:900px;height:32px;">
+                            <span class="num_img"><img src="images/num_01.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">表格样式1</span>
+                                <span class="num_content">展示行列数据信息</span>
+                            </div>
+                        </div>
+                        <!--以下是 表格样式1—普通列表 部分-->
+                        <div class="table_title">普通列表 </div>
+                        <div style="padding-left:60px;"><img src="images/A-images/img_A_table_1.png"></div>
+                        <div class="HTML_title">实例动态效果 &nbsp;&nbsp;<a href="controls.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox1" onClick="showBg();ShowCodeDiv('a_inputbox1',$('#div_inputbox1').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox1">
+                            <table class="table1">
+                                <tr>
+                                    <td class="header" width="9%">序号</td>
+                                    <td class="header" width="11%">申请日期</td>
+                                    <td class="header" width="11%">姓名</td>
+                                    <td class="header" width="8%">性别</td>
+                                    <td class="header" width="15%">出生日期</td>
+                                    <td class="header" width="11%">联系电话</td>
+                                    <td class="header">评估级别</td>
+                                    <td class="header">护理计划</td>
+                                    <td class="header">注意事项</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>1</td>
+                                    <td>2016-04-06</td>
+                                    <td>张中</td>
+                                    <td>男性</td>
+                                    <td>1961-05-15</td>
+                                    <td>13800152448</td>
+                                    <td>正常</td>
+                                    <td><a>常规护理</a></td>
+                                    <td class="col"></td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>2</td>
+                                    <td>2016-04-06</td>
+                                    <td>王磊</td>
+                                    <td>男性</td>
+                                    <td>1964-03-05</td>
+                                    <td>18605245426</td>
+                                    <td>轻度</td>
+                                    <td><a>优需护理</a></td>
+                                    <td class="col">皮肤易过敏</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>3</td>
+                                    <td>2016-04-06</td>
+                                    <td>张中</td>
+                                    <td>男性</td>
+                                    <td>1961-05-15</td>
+                                    <td>13800152448</td>
+                                    <td>正常</td>
+                                    <td><a>常规护理</a></td>
+                                    <td class="col"></td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>4</td>
+                                    <td>2016-04-06</td>
+                                    <td>王磊</td>
+                                    <td>男性</td>
+                                    <td>1964-03-05</td>
+                                    <td>18605245426</td>
+                                    <td>轻度</td>
+                                    <td><a>优需护理</a></td>
+                                    <td class="col">皮肤易过敏</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>5</td>
+                                    <td>2016-04-06</td>
+                                    <td>张中</td>
+                                    <td>男性</td>
+                                    <td>1961-05-15</td>
+                                    <td>13800152448</td>
+                                    <td>正常</td>
+                                    <td><a>常规护理</a></td>
+                                    <td class="col"></td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>6</td>
+                                    <td>2016-04-06</td>
+                                    <td>王磊</td>
+                                    <td>男性</td>
+                                    <td>1964-03-05</td>
+                                    <td>18605245426</td>
+                                    <td>轻度</td>
+                                    <td><a>优需护理</a></td>
+                                    <td class="col">皮肤易过敏</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>7</td>
+                                    <td>2016-04-06</td>
+                                    <td>张中</td>
+                                    <td>男性</td>
+                                    <td>1961-05-15</td>
+                                    <td>13800152448</td>
+                                    <td>正常</td>
+                                    <td><a>常规护理</a></td>
+                                    <td class="col"></td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>8</td>
+                                    <td>2016-04-06</td>
+                                    <td>王磊</td>
+                                    <td>男性</td>
+                                    <td>1964-03-05</td>
+                                    <td>18605245426</td>
+                                    <td>轻度</td>
+                                    <td><a>优需护理</a></td>
+                                    <td class="col">皮肤易过敏</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>9</td>
+                                    <td>2016-04-06</td>
+                                    <td>张中</td>
+                                    <td>男性</td>
+                                    <td>1961-05-15</td>
+                                    <td>13800152448</td>
+                                    <td>正常</td>
+                                    <td><a>常规护理</a></td>
+                                    <td class="col"></td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>10</td>
+                                    <td>2016-04-06</td>
+                                    <td>王磊</td>
+                                    <td>男性</td>
+                                    <td>1964-03-05</td>
+                                    <td>18605245426</td>
+                                    <td>轻度</td>
+                                    <td><a>优需护理</a></td>
+                                    <td class="col">皮肤易过敏</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--表格样式1—普通列表 部分结束-->
+                        <br/><br/>
+                        <!--以下是 表格样式1—可选择列表 部分-->
+                        <div class="table_title">可选择列表 </div>
+                        <div style="padding-left:60px;"><img src="images/A-images/img_A_table_2.png"></div>
+                        <div class="HTML_title">实例动态效果 &nbsp;&nbsp;<a href="controls.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox2" onClick="showBg();ShowCodeDiv('a_inputbox2',$('#div_inputbox2').html());">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox2">
+                            <table class="table2">
+                                <tr>
+                                    <td class="header" width="10%"><input type="checkbox" class="check_box" id="check01"/><label class="check_box" for="check01">&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+                                    <td class="header" width="13%">申请日期</td>
+                                    <td class="header" width="13%">姓名</td>
+                                    <td class="header" width="10%">性别</td>
+                                    <td class="header" width="18%">出生日期</td>
+                                    <td class="header" width="11%">联系电话</td>
+                                    <td class="header" width="13%">评估级别</td>
+                                    <td class="header">护理计划</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td><input type="checkbox" class="check_box" checked="checked" id="check02"/><label class="check_box" for="check02">&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+                                    <td>2016-04-06</td>
+                                    <td>张中</td>
+                                    <td>男性</td>
+                                    <td>1961-05-15</td>
+                                    <td>13800152448</td>
+                                    <td>正常</td>
+                                    <td>待制定</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td><input type="checkbox" class="check_box" id="check03"/><label class="check_box" for="check03">&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+                                    <td>2016-04-06</td>
+                                    <td>王磊</td>
+                                    <td>男性</td>
+                                    <td>1964-03-05</td>
+                                    <td>18605245426</td>
+                                    <td>轻度</td>
+                                    <td>待制定</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td><input type="checkbox" class="check_box" id="check04"/><label class="check_box" for="check04">&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+                                    <td>2016-04-05</td>
+                                    <td>朱奇</td>
+                                    <td>男性</td>
+                                    <td>1960-02-08</td>
+                                    <td>13801542657</td>
+                                    <td>正常</td>
+                                    <td>待制定</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td><input type="checkbox" class="check_box" id="check05"/><label class="check_box" for="check05">&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+                                    <td>2016-04-03</td>
+                                    <td>李玉</td>
+                                    <td>男性</td>
+                                    <td>1961-03-09</td>
+                                    <td>13802644582</td>
+                                    <td>正常</td>
+                                    <td>待制定</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--表格样式1—可选择列表 部分结束-->
+                        <br/><br/>
+                        <!--以下是 表格样式2—普通列表 部分-->
+                        <div style="width:900px;height:32px;margin-top:30px;">
+                            <span class="num_img"><img src="images/num_02.png"></span>
+                            <div style="width:821px;height:32px;float:left;">
+                                <span class="num_title">表格样式2</span>
+                                <span class="num_content">展示行列数据信息</span>
+                            </div>
+                        </div>
+                        <div class="table_title">普通列表 </div>
+                        <div style="padding-left:60px;"><img src="images/A-images/img_A_table_3.png"></div>
+                        <div class="HTML_title">实例动态效果 &nbsp;&nbsp;<a href="controls.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox3" onClick="showBg();ShowCodeDiv('a_inputbox3',$('#div_inputbox3').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox3">
+                            <table class="table3">
+                                <tr>
+                                    <td class="header" width="5%">序号</td>
+                                    <td class="header" width="9.5%">姓名</td>
+                                    <td class="header" width="6%">年龄</td>
+                                    <td class="header" width="21%">身份证号</td>
+                                    <td class="header" width="14%">登记时间</td>
+                                    <td class="header" width="13%">信息来源</td>
+                                    <td class="header" width="">居住地址</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>1</td>
+                                    <td>李丽丽</td>
+                                    <td>116</td>
+                                    <td>310*********012320</td>
+                                    <td>2016-05-24</td>
+                                    <td>登记</td>
+                                    <td>嘉定区安亭镇古华第一居委古华新村11弄</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>2</td>
+                                    <td>李敏</td>
+                                    <td>38</td>
+                                    <td>453*********172650</td>
+                                    <td>2016-05-24</td>
+                                    <td>导入</td>
+                                    <td>嘉定区安亭镇古华第一居委古华新村11弄</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>3</td>
+                                    <td>张晓月</td>
+                                    <td>49</td>
+                                    <td>310*********012320</td>
+                                    <td>2016-05-24</td>
+                                    <td>登记</td>
+                                    <td>嘉定区安亭镇古华第一居委古华新村11弄</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td>4</td>
+                                    <td>李丽丽</td>
+                                    <td>116</td>
+                                    <td>310*********012320</td>
+                                    <td>2016-05-24</td>
+                                    <td>登记</td>
+                                    <td>嘉定区安亭镇古华第一居委古华新村11弄</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--表格样式2—普通列表 部分结束-->
+                        <br/><br/>
+                        <!--以下是 表格样式2—可选择列表 部分-->
+                        <div class="table_title">可选择列表 </div>
+                        <div style="padding-left:60px;"><img src="images/A-images/img_A_table_4.png"></div>
+                        <div class="HTML_title">实例动态效果 &nbsp;&nbsp;<a href="controls.css" target=_blank>下载css样式</a>&nbsp;<a href="#" id="a_inputbox4" class="a_inputbox" onClick="showBg();ShowCodeDiv('a_inputbox4',$('#div_inputbox4').html())">查看调用代码</a></div>
+                        <div style="padding-left:60px;" id="div_inputbox4">
+                            <table class="table4">
+                                <tr>
+                                    <td class="header" width="7%"><input type="checkbox" class="check_box" id="check06"/><label class="check_box" for="check06">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td class="header" width="11%">姓名</td>
+                                    <td class="header" width="8%">性别</td>
+                                    <td class="header" width="17.5%">身份证号</td>
+                                    <td class="header" width="14%">联系电话</td>
+                                    <td class="header" width="">已有护理券</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td><input type="checkbox" class="check_box" id="check07"/><label class="check_box" for="check07">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td>张中江</td>
+                                    <td>男</td>
+                                    <td>340*********158899</td>
+                                    <td>13903423454</td>
+                                    <td class="td_left">5元护理券(1)/100元包护理券(2)</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td><input type="checkbox" class="check_box" checked id="check08"/><label class="check_box" for="check08">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td>李敏</td>
+                                    <td>女</td>
+                                    <td>340*********212318</td>
+                                    <td>13923124123</td>
+                                    <td class="td_left">100元包护理券(1)</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td><input type="checkbox" class="check_box" id="check09"/><label class="check_box" for="check09">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td>张晓巍</td>
+                                    <td>男</td>
+                                    <td>340*********124121</td>
+                                    <td>13956423562</td>
+                                    <td class="td_left">5元护理券(3)</td>
+                                </tr>
+                                <tr onMouseOver="this.className='rowover';" onMouseOut="this.className='row'">
+                                    <td><input type="checkbox" class="check_box" id="check10"/><label class="check_box" for="check10">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td>乐无穷</td>
+                                    <td>男</td>
+                                    <td>340*********212319</td>
+                                    <td>18354234173</td>
+                                    <td class="td_left">5元护理券(3)/100元包护理券(2)</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--表格样式2—可选择列表 部分结束-->
+                        <br/>
+                    </div>
+                </div>
+                <!--表格控件部分结束-->
+            </div>
+        </div>
+    </div>
+    <script src="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/prettify/r224/prettify.js"></script>
+    <script src="bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script type="text/javascript">
+        $(".form_datetime").datetimepicker({
+            format: "yyyy-mm-dd hh:ii:ss",
+            language: 'zh-CN',
+            weekStart: 1,
+            todayBtn: true,
+            autoclose: true,
+            todayHighlight: true,
+            startView: 2,
+            forceParse: 0,
+            showMeridian: false,  //是否为天和时间视图显示子午线
+            pickerPosition: "bottom-left",
+        });
+    </script>
+    <script src="src/layui.js" charset="utf-8"></script>
+    <script type="text/javascript">
+//        $("#tree a").css("color","black");
+////        $("#first-hospital>ul>li:nth-child(1)>ul").css("display","block");
+//        $("#tree select").on("click",function(){
+//            $("#first-hospital").css("border","1px solid #1d95ce");
+//        })
+//        $("#first-hospital>ul>li:nth-child(1)").on("click",function(){
+//            console.log($(this).children("ul"));
+//            $(this).children("ul").attr("class","show");
+//        })
+
+//function initMenu() {
+//    //	$('#menu ul').hide();
+//    //	$('#menu ul.smbody').show();
+//    $('#first-hospital ul li').click(
+//            function () {
+//                $(this).parent().parent().find("ul .second").css("background", "url(images/icon_back_hover.png) no-repeat 10px center");
+//                var checkElement = $(this).find(".second");
+//                console.log(checkElement );
+//                if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+//                    $('#menu ul:visible').slideDown('normal');
+//                    checkElement.slideUp('normal');
+//                    checkElement.prev().css("background", "url(../images/i_sm_collapsed.gif) no-repeat 10px center");
+//                    return false;
+//                }
+//                if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+//                    $('#menu ul:visible').slideUp('normal');
+//                    checkElement.slideDown('normal');
+//                    checkElement.prev().css("background", "url(../images/i_sm_expanded.gif) no-repeat 10px center");
+//                    return false;
+//                }
+//            }
+//    );
+//}
+//$(document).ready(function () { initMenu(); });
+
+
+
+        //Demo
+
+$("#selected").change(function(){
+    console.log("1");
+           $("#box").css({"display":"block","border":"1px solid #21b7c6"});
+
+       })
+layui.use('tree', function() {
+    layui.tree({
+        elem: '#demo1' //传入元素选择器
+        , nodes: [{ //节点
+            name: '住院部'
+            , children: [{
+                name: '内科'
+                ,children:[{
+                    name:'神经内科'
+                }]
+            }, {
+                name: '外科'
+            }]
+        }, {
+            name: '内科'
+            , children: [{
+                name: '子节点21'
+                , children: [{
+                    name: '子节点211'
+                }]
+            }]
+        }, {
+            name: '五官科'
+            , children: [{
+                name: '子节点21'
+                , children: [{
+                    name: '子节点211'
+                }]
+            }]
+        },{
+            name: '神经内科'
+            , children: [{
+                name: '子节点21'
+                , children: [{
+                    name: '子节点211'
+                }]
+            }]
+        }]
+    });
+});
+    </script>
+</body>
+</html>
